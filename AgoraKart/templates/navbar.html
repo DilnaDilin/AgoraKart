@@ -1,0 +1,15 @@
+<nav>
+        <ul>
+            <li>
+                <a href="{% url 'agorakartapp:allProdCat' %} ">All Products Here</a>
+            </li>
+            {%for cat in links%}
+            <li>
+                <a href="{{cat.get_url}}">{{cat.name}} </a>
+            </li>
+            {%endfor%}
+            <li>
+                <p>Your Cart</p>
+            </li>
+        </ul>
+</nav>

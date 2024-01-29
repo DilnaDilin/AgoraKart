@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{%load static%}
+{%block metadescription%}
+  {% if category %}
+    <div>
+      {{category.description|truncatewords:150}}
+    </div>
+  {% else %}
+      Welcome to AgoraKart, where you can buy your clothing's
+  {% endif %}
+
+{% endblock %}
+{%block title%}
+  {%if category %}
+    <div>
+      {{category.name}}--AgoraKart
+    </div>
+  {%else%}
+    See Our New Collections-AgoraKart
+  {%endif%}
+{%endblock%}
+{%block content%}
+{%if category%}
+<div>
+  <div>
+    <a href="{% url 'agorakartapp:allProdCat'%}">Our Product Collections</a>
+  </div>
+</div>
+{%endif%}
+{%if category%}
+<div>
+  <img src="{{category.image.url}}" width="80%" height="400px" alt="{{category.name}}">
+</div>
+<br>
+<div>
+  <h1>{{category.name}}</h1><br>
+
+  <h3>{{category.description}}</h3>
+</div>
+{%else%}
+<div>
+  <img src="{% static 'img/banner.jpg'%}"style="width: 100%; height: 200px" alt="Our Products">
+</div>
+<br>
+<div>
+  <h1>Our Product Collections</h1>
+  <br>
+  <h3>Descritpion</h3>
+</div>
+
+{%endif%}
+<div>
+  {%for product in products%}
+  <div>
+    <div>
+      <a href=""><img src=" {{product.image.url}}" width="200px" height="200px" alt="{{product.name}}"></a><br>
+      <p2> {{product.name}}</p2>
+    </div>
+  </div>
+
+  {%endfor%}
+</div>
+{%endblock%}

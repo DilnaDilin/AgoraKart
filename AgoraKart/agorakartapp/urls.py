@@ -1,7 +1,10 @@
+
 from . import views
 from django.urls import path
-
+app_name='agorakartapp'
 urlpatterns = [
 
-    path('',views.index,name='index')
+    path('',views.allProdCat,name='allProdCat'),
+    path('<slug:c_slug>/',views.allProdCat,name='all_product_by_category')
+
 ]

@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 
 # Create your models here.
 class Category(models.Model):
@@ -12,6 +14,10 @@ class Category(models.Model):
         verbose_name_plural='categories'
     def __str__(self):
         return '{}'.format(self.name)
+    def get_url(self):
+        return reverse('agorakartapp:all_product_by_category',args=[self.slug])
+
+
 class Product(models.Model):
     name=models.CharField(max_length=250,unique=True)
     slug=models.SlugField(unique=True)
