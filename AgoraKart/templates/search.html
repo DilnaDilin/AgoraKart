@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{%load static%}
+{%block metadescription%}
+
+
+      Welcome to AgoraKart, where you can buy your clothing's
+
+
+{% endblock %}
+{%block title%}
+  AgoraKart
+{%endblock%}
+{%block content%}
+    <div class="text-center mx-auto"> You have searched for :<b>{{query}}</b></div>
+    {% if products %}
+<div class="container-fluid">
+  <div class="row">
+      {% for product in products %}
+      <!-- Your code for each product -->
+        <div class="col-md-4 mb-4">
+          <div class="card text-center" style="width: 18rem; height:360px">
+            <a href="{{product.get_url}}">
+            <img src="{{product.image.url}}" width="150px" height="200px" alt="{{product.name}}">
+            </a><br>
+
+            <div class="card-body">
+              <h5 class="card-title">{{product.name}}</h5>
+              <p class="card-text">{{product.price}}</p>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+  </div></div>
+
+    {% else %}
+      <div class="text-center mx-auto mt-3">
+        <p class="lead">No results found.</p>
+      </div>
+    {% endif %}
+
+
+{%endblock%}

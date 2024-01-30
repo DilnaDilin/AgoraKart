@@ -53,7 +53,7 @@
 {%endif%}
 <div class="container-fluid">
   <div class="row">
-    {% for product in products %}
+    {% for product in products.object_list %}
       <div class="col-md-4 mb-4">
         <div class="card text-center" style="width: 18rem; height:360px">
           <a href="{{product.get_url}}">
@@ -68,6 +68,18 @@
         </div>
       </div>
     {% endfor %}
+    <div class="mx-auto">
+      {% if products.paginator.num_pages > 1 %}
+      <div class="text-center">
+        {% for pg in products.paginator.page_range %}
+          <a href="?page={{ pg }}" class="btn btn-light btn-sm {% if products.number == pg %}active{% endif %}">{{ pg }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+
+
   </div>
 </div>
 

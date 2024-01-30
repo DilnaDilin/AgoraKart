@@ -21,7 +21,9 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('agorakartapp.urls'))
+    path('agorakart',include('agorakartapp.urls')),
+    path('search/',include('searchapp.urls'))
+
 ]
 
 if settings.DEBUG:
