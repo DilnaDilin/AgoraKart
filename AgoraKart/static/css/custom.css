@@ -1,0 +1,69 @@
+
+/****Logo setting***/
+.centered-header {
+    text-align: center;
+    background-color:grey;
+}
+
+.oval-logo {
+    display: inline-block; /* Ensures that the container only takes up the necessary width */
+    border-radius: 50%; /* This creates a circular shape */
+    overflow: hidden; /* Ensures the image is clipped to the oval shape */
+}
+
+.oval-logo img {
+    width: 200px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    border-radius: 50%;
+    object-fit: cover;
+    display: block; /* Removes any extra spacing caused by inline-block */
+    margin: 0 auto; /* Centers the image horizontally within its container */
+}
+
+/*****navbar settings****/
+.nav-left{
+width:50%;
+height:50px;
+}
+.nav-right{
+text-align:right;
+font-family: 'Gowun Batang', serif;
+height:50px;
+}
+.navbar-nav{
+font-family: 'Gowun Batang', serif;
+}
+.nav-item{
+letter-spacing:.2em;
+font size:14px;
+text-transform:uppercase;}
+.footer-item{
+font-family: 'Gowun Batang', serif;
+letter-spacing:.2em;
+text-transform:uppercase;
+background-color:grey;
+color:white;
+}
+/****category.html***/
+.cl-prod{
+font-family: 'Gowun Batang', serif;
+font-weight: bold;
+text-align: justify
+}
+.prod{
+font-family: 'Gowun Batang', serif;
+font-weight: bold;
+text-align: justify
+}
+
+/***Product.html***/
+.product-cl{
+background-color:#f2ebeb;
+text-align:center;
+font-family: 'Gowun Batang', serif;
+color:black;
+font-size:14px;
+}
+.product-cl .des{
+text-align:justify;
+}

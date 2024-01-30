@@ -1,0 +1,38 @@
+
+{% extends 'base.html' %}
+{%load static%}
+{%block metadescription%}
+    <div>
+      {{product.description|truncatewords:150}}
+    </div>
+{% endblock %}
+{%block title%}
+      {{product.name}}--AgoraKart
+{%endblock%}
+{%block content%}
+<div class="container">
+
+        <p>
+            <a href="{% url 'agorakartapp:allProdCat' %}">Home</a>|<a href="{{product.category.get_url}}">{{product.category}}</a>|{{product.name}}
+        </p>
+
+</div>
+<div class="container product-cl col-md-12 ">
+    <div class="row ">
+        <br>
+        <div class="text-center mt-3">
+            <img src="{{product.image.url}}" width="200px" height="150px" alt="{{product.name}}">
+        </div>
+        <h1 style="font-size:25px;font-weight: bold;">
+        {{product.name}}
+        </h1>
+        <p>${{product.price}}</p>
+        <p class="des">{{product.description}}</p>
+        {%if product.stock <= 0 %}
+        <p><b>Out of stock</b></p>
+        {%else%}
+        <a href="" class="btn btn-primary"> ADD TO CART</a>
+        {%endif%}
+    </div>
+</div>
+{%endblock%}

@@ -35,3 +35,5 @@ class Product(models.Model):
         verbose_name_plural='products'
     def __str__(self):
         return '{}'.format(self.name)
+    def get_url(self):
+        return reverse('agorakartapp:productDetail', args=[self.category.slug,self.slug])
