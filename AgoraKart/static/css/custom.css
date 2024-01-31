@@ -67,3 +67,9 @@ font-size:14px;
 .product-cl .des{
 text-align:justify;
 }
+/**cart**/
+.disabled-button {
+    opacity: 0.5; /* Adjust the opacity to visually indicate that the button is disabled */
+    cursor: not-allowed;
+    color:red;
+  }
