@@ -65,7 +65,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'agorakartapp.context_processors.menu_links'
+                'agorakartapp.context_processors.menu_links',
+                'cart.context_processors.counter',
             ],
         },
     },

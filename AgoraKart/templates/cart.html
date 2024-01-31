@@ -63,7 +63,7 @@
                                 {% if cart_item.quantity < cart_item.product.stock %}
                                 <div class="input-group bootstrap-touchspin">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default bootstrap-touchspin-down" type="button">-</button></span>
+                                        <a href="{% url 'cart:cart_remove' cart_item.product_id %}" class="btn btn-default bootstrap-touchspin-up " >-</a></span>
                                     <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
                                     <input type="text" name="" value="{{cart_item.quantity}}" class="input-qty form-control text-center" style="display: block;" readonly>
                                     <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
@@ -72,7 +72,7 @@
                                 {%else%}
                                 <div class="input-group bootstrap-touchspin">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default bootstrap-touchspin-down" type="button">-</button></span>
+                                        <a href="{% url 'cart:cart_remove' cart_item.product_id %}" class="btn btn-default bootstrap-touchspin-up " >-</a></span>
                                     <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
                                     <input type="text" name="" value="{{cart_item.quantity}}" class="input-qty form-control text-center " style="display: block;" readonly>
                                     <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
@@ -84,7 +84,7 @@
                             <td class="price">$ {{cart_item.product.price}}</td>
                             <td>$ {{cart_item.sub_total}}</td>
                             <td class="text-center">
-                                <a href="#" class="remove_cart" rel="2">
+                                <a href="{% url 'cart:full_remove' cart_item.product.id %}" class="remove_cart" rel="2">
                                     <i class="fa fa-trash-o"></i>
                                 </a>
                             </td>

@@ -31,7 +31,7 @@
         {%if product.stock <= 0 %}
         <p><b>Out of stock</b></p>
         {%else%}
-        <a href="{% url 'cart:add_cart' product.id}" class="btn btn-primary"> ADD TO CART</a>
+        <a href="{% url 'cart:add_cart' product.id %}"  class="btn btn-primary"> ADD TO CART</a>
         {%endif%}
     </div>
 </div>
